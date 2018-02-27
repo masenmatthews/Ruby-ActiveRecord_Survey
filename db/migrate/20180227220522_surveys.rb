@@ -1,0 +1,9 @@
+class Surveys < ActiveRecord::Migration[5.1]
+    def change
+      create_table(:surveys) do |t|
+        t.column(:survey_title, :string)
+        t.column(:survey_question, :string)
+        t.column(:survey_answer, :string)
+    end
+  end
+end

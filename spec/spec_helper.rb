@@ -1,11 +1,11 @@
 require("rspec")
 require("pg")
 require("sinatra/activerecord")
-require("task")
+require("question")
 
 RSpec.configure do |config|
   config.after(:each) do
-    Task.all().each() do |task|
+    Question.all().each() do |task|
       task.destroy()
     end
   end

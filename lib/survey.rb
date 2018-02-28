@@ -1,4 +1,5 @@
 class Survey < ActiveRecord::Base
+  has_many(:questions)
   # belongs_to(:survey)
   validates(:survey_title, {:presence => true, :length => {:maximum => 50}})
   before_save(:titleize)
@@ -6,6 +7,7 @@ class Survey < ActiveRecord::Base
   scope(:not_done, -> do
     where({:done => false})
   end)
+
 
   # private
 
